@@ -14,14 +14,14 @@
 #define OLD_APP_PATH            "/switch/sigpatch-updater.nro"
 
 #define APP_VERSION             "1.0.0"
-#define CURSOR_LIST_MAX         2
+#define CURSOR_LIST_MAX         3
 
 
 const char *OPTION_LIST[] =
 {
     "= Mettre à jour les sigpatches (Pour les utilisateurs de ams)",
     "= Mettre à jour les sigpatches (Pour les utilisateurs de Kosmos/Hekate)",
-    "= Mettre à jour cette application"
+    "= Mettre à jour cette application",
     "= Mettre à jour le CFW"
 };
 
