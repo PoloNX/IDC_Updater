@@ -13,7 +13,7 @@
 #define APP_OUTPUT              "/switch/sigpatch-updater/sigpatch-updater.nro"
 #define OLD_APP_PATH            "/switch/sigpatch-updater.nro"
 
-#define APP_VERSION             "0.1.3"
+#define APP_VERSION             "1.0.0"
 #define CURSOR_LIST_MAX         2
 
 
@@ -22,13 +22,14 @@ const char *OPTION_LIST[] =
     "= Mettre à jour les sigpatches (Pour les utilisateurs de ams)",
     "= Mettre à jour les sigpatches (Pour les utilisateurs de Kosmos/Hekate)",
     "= Mettre à jour cette application"
+    "= Mettre à jour le CFW"
 };
 
 void refreshScreen(int cursor)
 {
     consoleClear();
 
-    printf("\x1B[36mIDC-Sigpatch-Updater: v%s.\x1B[37m\n\n\n", APP_VERSION);
+    printf("\x1B[36mIDC-Updater: v%s.\x1B[37m\n\n\n", APP_VERSION);
     printf("Appuyer sur (A) pour sélectionner une option\n\n");
     printf("Appuyer (+) pour quitter l'application\n\n\n");
 
@@ -131,6 +132,15 @@ int main(int argc, char **argv)
                     printDisplay("Une erreure est surevenue lors du téléchargement de l'app\n");
                 }
                 break;
+
+            case UP_CFW
+                if (downloadFile(CFW_URL, TEMP_FILE, OFF))
+                    unzip(TEMP_FILE);
+                else
+                   printDisplay("Une erreure est survenue lors du téléchargement du CFW") ;
+                
+                break;
+                
             }
         }
         
