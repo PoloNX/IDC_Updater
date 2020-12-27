@@ -133,7 +133,7 @@ int main(int argc, char **argv)
                 }
                 break;
 
-            case UP_CFW
+                case UP_CFW:
                 if (downloadFile(CFW_URL, TEMP_FILE, OFF))
                     unzip(TEMP_FILE);
                 else
